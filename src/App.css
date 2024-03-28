@@ -7,7 +7,6 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "UTM-Facebook", sans-serif;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
 }
@@ -39,10 +38,6 @@ textarea {
   border: none;
   outline: none;
   background-color: #fff;
-}
-.wrapper {
-  max-width: 600px;
-  margin: auto;
 }
 /* embeb */
 @font-face {
