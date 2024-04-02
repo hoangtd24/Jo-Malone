@@ -12,6 +12,7 @@ body {
 }
 html {
   overflow-y: scroll;
+  min-height: 100vh;
 }
 a {
   text-decoration: none;
@@ -24,10 +25,6 @@ a {
 
 .read-the-docs {
   color: #888;
-}
-
-.wrapper {
-  position: relative;
 }
 
 input,

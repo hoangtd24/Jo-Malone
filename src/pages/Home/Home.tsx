@@ -6,6 +6,9 @@ import { useForm } from "react-hook-form";
 import Loading from "../../component/loading/Loading";
 import styles from "./Home.module.scss";
 import toPascalCase from "../../utils/toPascalCase";
+import btn from "../../assets/images/btn.png";
+import logo from "../../assets/images/logo.png";
+import bg from "../../assets/images/bg.png";
 
 const cx = classNames.bind(styles);
 
@@ -13,6 +16,7 @@ interface formValues {
   name: string;
   phone: string;
   mail: string;
+  policy: boolean;
 }
 
 const Home = () => {
@@ -28,6 +32,7 @@ const Home = () => {
       name: "",
       phone: "",
       mail: "",
+      policy: false,
     },
   });
 
@@ -35,7 +40,11 @@ const Home = () => {
     setLoading(true);
     console.log(toPascalCase(data.name));
     await axios
-      .post("https://api.landingpage.tcgh.com.vn/api/jomalone/create", data)
+      .post("https://api.landingpage.tcgh.com.vn/api/jomalone/create", {
+        name: data.name,
+        phone: data.phone,
+        mail: data.mail,
+      })
       .then((res) => {
         if (res.status === 200) {
           setSubmitted(true);
@@ -51,8 +60,10 @@ const Home = () => {
   return (
     <>
       <div className={cx("container")}>
+        <img src={bg} className={cx("bg")} />
         {!submited ? (
           <div className={cx("content")}>
+            <img src={logo} className={cx("logo")} />
             <form
               onSubmit={handleSubmit(handleSurvey)}
               className={cx("form-content")}
@@ -107,12 +118,46 @@ const Home = () => {
                 <p>This field is required</p>
               )}
               {errors.mail?.type === "pattern" && <p>Please type your email</p>}
-
-              <input type="submit" className={cx("submit_btn")} />
+              <div className={cx("policy")}>
+                <div className={cx("checkbox-wrapper-46")}>
+                  <input
+                    type="checkbox"
+                    id="cbx-46"
+                    className={cx("inp-cbx")}
+                    {...register("policy", {
+                      required: true,
+                    })}
+                  />
+                  <label htmlFor="cbx-46" className={cx("cbx")}>
+                    <span>
+                      <svg viewBox="0 0 12 10" height="10px" width="12px">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                      </svg>
+                    </span>
+                    <span className={cx("policy_text")}>
+                      <p>Tôi đồng ý chia sẻ thông tin cá nhân và </p>
+                      <p>Jo Malone London chỉ được sử dụng thông tin</p>
+                      <p>cá nhân của tôi với mục đích lưu trữ và CSKH.</p>
+                    </span>
+                  </label>
+                </div>
+                <p className={cx("policy_text-en")}>
+                  <p>I agree to share my personal information, and</p>
+                  <p>Jo Malone London is only allowed to use</p>
+                  <p>my personal information for storage and</p>
+                  <p>customer service purposes.</p>
+                </p>
+              </div>
+              <img
+                src={btn}
+                className={cx("submit_btn")}
+                onClick={handleSubmit(handleSurvey)}
+              />
             </form>
           </div>
         ) : (
           <div className={cx("text_content")}>
+            <img src={logo} className={cx("logo")} />
             <div className={cx("text_one")}>
               <p>Cảm ơn bạn đã tham gia trải nghiệm</p>
               <p>cùng Jo Malone London. Hãy ghé thăm</p>
