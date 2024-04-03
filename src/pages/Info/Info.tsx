@@ -3,15 +3,14 @@ import axios from "axios";
 import classNames from "classnames/bind";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import btn from "../../assets/images/btn.png";
+import bg from "../../assets/images/fullbg.jfif";
+import logo from "../../assets/images/logo.png";
+import nextImg from "../../assets/images/next.png";
+import product from "../../assets/images/product.png";
 import Loading from "../../component/loading/Loading";
 import styles from "./Info.module.scss";
-import toPascalCase from "../../utils/toPascalCase";
-import btn from "../../assets/images/btn.png";
-import logo from "../../assets/images/logo.png";
-import bg from "../../assets/images/fullbg.jfif";
-import product from "../../assets/images/product.png";
-import nextImg from "../../assets/images/next.png";
-import { useNavigate } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
