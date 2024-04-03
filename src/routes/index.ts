@@ -1,5 +1,6 @@
-import {lazy,LazyExoticComponent,ComponentType} from "react"
+import { lazy, LazyExoticComponent, ComponentType } from "react";
 const Home = lazy(() => import("../pages/Home/Home"));
+const Info = lazy(() => import("../pages/Info/Info"));
 
 type Route = {
   path: string;
@@ -8,7 +9,8 @@ type Route = {
 };
 
 export const publicRoutes: Route[] = [
-  { path: "/", component: Home },
+  { path: "/success", component: Home },
+  { path: "/", component: Info },
 ];
 
 export const privateRoutes: Route[] = [];
