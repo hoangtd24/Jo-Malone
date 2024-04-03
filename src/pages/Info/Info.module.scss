@@ -33,14 +33,14 @@
   align-items: center;
 }
 .form_input {
-  position: absolute;
   width: 72%;
-  top: 18%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+}
+.form-err {
+  //min-height: 16px;
   & > p {
     font-size: clamp(12px, 3.5vw, 18px);
     color: rgb(255, 53, 53);
@@ -56,7 +56,7 @@
 .form-item {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 72%;
   label {
     font-size: clamp(12px, 4vw, 20px);
     color: white;
@@ -64,27 +64,31 @@
   }
 
   input {
-    padding: 10px 4px;
+    padding: 10px 0.8vw;
     border-radius: 2px;
+    color: #000;
+    &::placeholder {
+      font-style: italic;
+    }
   }
 }
-// .form-item:first-child {
-//   position: absolute;
-//   top: 18%;
-// }
+.form-item:first-child {
+  position: absolute;
+  top: 18%;
+}
 
-// .form-item:nth-child(2) {
-//   position: absolute;
-//   top: 27%;
-// }
+.form-item:nth-child(2) {
+  position: absolute;
+  top: 27%;
+}
 
-// .form-item:nth-child(3) {
-//   position: absolute;
-//   top: 38%;
-// }
+.form-item:nth-child(3) {
+  position: absolute;
+  top: 38%;
+}
 
 .form-item + .form-item {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .submit_btn {
@@ -272,9 +276,13 @@
 }
 @media (max-width: 600px) {
   .bg {
-    height: 100vh;
+    min-height: 100vh;
   }
 }
 
 @media (max-width: 480px) {
+  // .checkbox-wrapper-46 {
+  //   position: absolute;
+  //   top: 55%;
+  // }
 }

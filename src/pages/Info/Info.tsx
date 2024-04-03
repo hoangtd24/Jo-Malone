@@ -79,13 +79,17 @@ const Info = () => {
                       required: true,
                       //pattern: /^[A-Za-z]+$/i,
                     })}
-                    placeholder="Type your fullname"
+                    placeholder="Full name"
                   />
+                  <div className={cx("form-err")}>
+                    {errors.name?.type == "required" && (
+                      <p>This field is required</p>
+                    )}
+                    {errors.name?.type == "pattern" && (
+                      <p>Please type your name</p>
+                    )}
+                  </div>
                 </div>
-                {errors.name?.type == "required" && (
-                  <p>This field is required</p>
-                )}
-                {errors.name?.type == "pattern" && <p>Please type your name</p>}
                 <div className={cx("form-item")}>
                   <label>Số điện thoại: (*)</label>
                   <input
@@ -95,21 +99,23 @@ const Info = () => {
                       maxLength: 12,
                       pattern: /((09|03|07|08|05)+([0-9]{8})\b)/g,
                     })}
-                    placeholder="Type your phone number"
+                    placeholder="Phone number"
                   />
+                  <div className={cx("form-err")}>
+                    {errors.phone?.type === "required" && (
+                      <p>This field is required</p>
+                    )}
+                    {errors?.phone?.type === "pattern" && (
+                      <p>Please type your phone number</p>
+                    )}
+                    {errors?.phone?.type === "minLength" && (
+                      <p>Please type your phone number</p>
+                    )}
+                    {errors?.phone?.type === "maxLength" && (
+                      <p>Please type your phone number</p>
+                    )}
+                  </div>
                 </div>
-                {errors.phone?.type === "required" && (
-                  <p>This field is required</p>
-                )}
-                {errors?.phone?.type === "pattern" && (
-                  <p>Please type your phone number</p>
-                )}
-                {errors?.phone?.type === "minLength" && (
-                  <p>Please type your phone number</p>
-                )}
-                {errors?.phone?.type === "maxLength" && (
-                  <p>Please type your phone number</p>
-                )}
                 <div className={cx("form-item")}>
                   <label>Email: (*)</label>
                   <input
@@ -117,15 +123,17 @@ const Info = () => {
                       required: true,
                       pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                     })}
-                    placeholder="Type your email"
+                    placeholder="Email"
                   />
+                  <div className={cx("form-err")}>
+                    {errors.mail?.type === "required" && (
+                      <p>This field is required</p>
+                    )}
+                    {errors.mail?.type === "pattern" && (
+                      <p>Please type your email</p>
+                    )}
+                  </div>
                 </div>
-                {errors.mail?.type === "required" && (
-                  <p>This field is required</p>
-                )}
-                {errors.mail?.type === "pattern" && (
-                  <p>Please type your email</p>
-                )}
               </div>
               <div className={cx("policy")}>
                 <div className={cx("checkbox-wrapper-46")}>
