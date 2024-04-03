@@ -46,6 +46,7 @@
     color: rgb(255, 53, 53);
     width: 100%;
     &::before {
+      font-size: clamp(12px, 3.2vw, 18px);
       display: inline;
       content: "⚠ ";
       color: rgb(255, 53, 53);
@@ -64,7 +65,7 @@
   }
 
   input {
-    padding: 10px 0.8vw;
+    padding: 10px 4px;
     border-radius: 2px;
     color: #000;
     &::placeholder {
@@ -74,7 +75,7 @@
 }
 .form-item:first-child {
   position: absolute;
-  top: 18%;
+  top: 17%;
 }
 
 .form-item:nth-child(2) {
@@ -139,7 +140,7 @@
 }
 
 .policy {
-  font-size: clamp(12px, 3.5vw, 18px);
+  font-size: clamp(11px, 3.5vw, 18px);
   color: white;
   padding-left: 4%;
   width: 100%;
@@ -263,7 +264,7 @@
   top: 65%;
   width: 72%;
   color: white;
-  font-size: clamp(12px, 3.5vw, 18px);
+  font-size: clamp(11px, 3.5vw, 18px);
   padding-left: 4%;
   & p {
     display: inline-block;
@@ -281,8 +282,23 @@
 }
 
 @media (max-width: 480px) {
-  // .checkbox-wrapper-46 {
-  //   position: absolute;
-  //   top: 55%;
-  // }
+  .form-item {
+    display: flex;
+    flex-direction: column;
+    width: 72%;
+    label {
+      font-size: clamp(12px, 4vw, 20px);
+      color: white;
+      font-weight: 400;
+    }
+
+    input {
+      padding: 2vw 1vw;
+      border-radius: 2px;
+      color: #000;
+      &::placeholder {
+        font-style: italic;
+      }
+    }
+  }
 }

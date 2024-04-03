@@ -25,6 +25,7 @@ interface formValues {
 const Info = () => {
   const [next, setNext] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
+  const [imgLoaded, setImgLoaded] = useState<boolean>(true);
   const navigate = useNavigate();
 
   const {
@@ -42,7 +43,6 @@ const Info = () => {
 
   const handleSurvey = async (data: formValues) => {
     setLoading(true);
-    console.log(toPascalCase(data.name));
     await axios
       .post("https://api.landingpage.tcgh.com.vn/api/jomalone/create", {
         name: data.name,
@@ -62,10 +62,15 @@ const Info = () => {
 
   return (
     <>
+      {imgLoaded && <Loading />}
       <div className={cx("container")}>
         <img src={bg} className={cx("bg")} />
         <div className={cx("content")}>
-          <img src={logo} className={cx("logo")} />
+          <img
+            src={logo}
+            className={cx("logo")}
+            onLoad={() => setImgLoaded(false)}
+          />
           {next ? (
             <form
               onSubmit={handleSubmit(handleSurvey)}
