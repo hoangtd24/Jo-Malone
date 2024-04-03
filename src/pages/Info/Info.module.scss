@@ -18,10 +18,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: show 0.4s ease;
 }
 
 .logo {
-  width: 45%;
+  width: 40%;
   position: absolute;
   top: 9%;
 }
@@ -31,6 +32,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: show 0.3s ease;
 }
 .form_input {
   width: 72%;
@@ -95,6 +97,8 @@
 .submit_btn {
   position: absolute;
   top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,7 +144,7 @@
 }
 
 .policy {
-  font-size: clamp(11px, 3.5vw, 18px);
+  font-size: clamp(10px, 3.5vw, 18px);
   color: white;
   padding-left: 4%;
   width: 100%;
@@ -264,7 +268,7 @@
   top: 65%;
   width: 72%;
   color: white;
-  font-size: clamp(11px, 3.5vw, 18px);
+  font-size: clamp(10px, 3.5vw, 18px);
   padding-left: 4%;
   & p {
     display: inline-block;
@@ -273,6 +277,16 @@
 @keyframes wave-46 {
   50% {
     transform: scale(0.9);
+  }
+}
+@keyframes show {
+  from {
+    opacity: 0.2;
+    top: 15%;
+  }
+  to {
+    opacity: 1;
+    top: 0;
   }
 }
 @media (max-width: 600px) {
