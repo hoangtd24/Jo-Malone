@@ -1,7 +1,7 @@
 import { Modal } from "@mui/material";
 import axios from "axios";
 import classNames from "classnames/bind";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import btn from "../../assets/images/btn.png";
@@ -28,6 +28,7 @@ const Info = () => {
   const [next, setNext] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [imgLoaded, setImgLoaded] = useState<boolean>(true);
+  const [height, setHeight] = useState<number>();
   const navigate = useNavigate();
 
   const {
@@ -42,6 +43,17 @@ const Info = () => {
       policy: false,
     },
   });
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setHeight(window.innerHeight);
+    });
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        setHeight(window.innerHeight);
+      });
+    };
+  }, []);
 
   const handleSurvey = async (data: formValues) => {
     setLoading(true);
@@ -65,7 +77,7 @@ const Info = () => {
   return (
     <>
       {imgLoaded && <Loading />}
-      <div className={cx("container")}>
+      <div className={cx("container")} style={{ height: `${height}px` }}>
         <div className={cx("content")}>
           <div className={cx("logo")}>
             <img src={logo} />
