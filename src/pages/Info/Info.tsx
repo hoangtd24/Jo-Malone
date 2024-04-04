@@ -184,10 +184,19 @@ const Info = () => {
               <div className={cx("text2")}>
                 <img src={text2} />
               </div>
-              <div className={cx("product_img")}>
+              <div
+                className={cx("product_img")}
+                onLoad={() => setImgLoaded(false)}
+              >
                 <img src={product} />
               </div>
-              <div className={cx("next_btn")} onClick={() => setNext(true)}>
+              <div
+                className={cx("next_btn")}
+                onClick={() => {
+                  setNext(true);
+                  setImgLoaded(true);
+                }}
+              >
                 <img src={nextImg} />
               </div>
             </div>
