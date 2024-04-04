@@ -65,10 +65,9 @@ const Info = () => {
     <>
       <div className={cx("container")}>
         <div className={cx("content")}>
-          <img
-            src={logo}
-            className={cx("logo")}
-          />
+          <div className={cx("logo")}>
+            <img src={logo} />
+          </div>
           {next ? (
             <form
               onSubmit={handleSubmit(handleSurvey)}

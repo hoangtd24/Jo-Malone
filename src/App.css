@@ -9,6 +9,7 @@
 body {
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+  font-family: MaloneSerifVN-Regular;
 }
 html {
   overflow-y: scroll;
@@ -38,25 +39,20 @@ textarea {
 }
 /* embeb */
 @font-face {
-  font-family: Rifton-Normal-Viethoa;
-  src: url("./assets/fonts/Rifton\ Normal\ Viethoa.ttf");
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: UTM-Facebook;
-  src: url("./assets/fonts/UTM-Facebook.ttf");
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: Baloo2-Regular;
-  src: url("./assets/fonts/Baloo2-Regular.ttf");
+  font-family: MaloneSerifVN-Regular;
+  src: url("./assets/fonts/MaloneSerifVN-Regular.ttf");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: ProximaNova;
-  src: url("./assets/fonts/Proxima-Nova-Bold.woff");
+  font-family: MaloneSerifVN-Medium;
+  src: url("./assets/fonts//MaloneSerifVN-Medium.ttf");
   font-weight: 600;
 }
+
+@font-face {
+  font-family: MyriadPro-Regular;
+  src: url("./assets/fonts/MyriadPro-Regular.otf");
+  font-weight: 400;
+}
+
