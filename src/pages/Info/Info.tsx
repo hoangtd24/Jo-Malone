@@ -1,4 +1,3 @@
-import { Modal } from "@mui/material";
 //import axios from "axios";
 import classNames from "classnames/bind";
 //import { useState } from "react";
@@ -12,7 +11,6 @@ import classNames from "classnames/bind";
 // import text2 from "../../assets/images/text2.png";
 // import text3 from "../../assets/images/text3.png";
 // import text4 from "../../assets/images/text4.png";
-import Loading from "../../component/loading/Loading";
 import styles from "./Info.module.scss";
 
 const cx = classNames.bind(styles);
