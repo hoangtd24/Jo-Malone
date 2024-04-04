@@ -5,14 +5,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import btn from "../../assets/images/btn.png";
-import bg from "../../assets/images/fullbg.jfif";
 import logo from "../../assets/images/logo.png";
+import nextImg from "../../assets/images/next.png";
+import product from "../../assets/images/product.png";
 import text1 from "../../assets/images/text1.png";
 import text2 from "../../assets/images/text2.png";
 import text3 from "../../assets/images/text3.png";
 import text4 from "../../assets/images/text4.png";
-import nextImg from "../../assets/images/next.png";
-import product from "../../assets/images/product.png";
 import Loading from "../../component/loading/Loading";
 import styles from "./Info.module.scss";
 
@@ -65,9 +64,7 @@ const Info = () => {
 
   return (
     <>
-      {imgLoaded && <Loading />}
       <div className={cx("container")}>
-        <img src={bg} className={cx("bg")} />
         <div className={cx("content")}>
           <img
             src={logo}
