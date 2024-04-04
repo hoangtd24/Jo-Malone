@@ -10,10 +10,11 @@ body {
   line-height: 1.5;
   text-rendering: optimizeSpeed;
   font-family: MaloneSerifVN-Regular;
+  height: 100%;
 }
 html {
   overflow-y: scroll;
-  min-height: 100vh;
+  height: 100%;
 }
 a {
   text-decoration: none;
