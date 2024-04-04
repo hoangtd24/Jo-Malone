@@ -65,8 +65,17 @@ const Info = () => {
   return (
     <>
       {/* {imgLoaded && <Loading />} */}
-      <div className={cx("container")}>
-        {/* <div className={cx("content")}>
+      <div className={cx("container")}></div>
+      <Modal
+        open={false}
+        // onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      >
+        <Loading />
+      </Modal>
+      {/* <div className={cx("content")}>
           <div className={cx("logo")}>
             <img src={logo} />
           </div>
@@ -197,16 +206,6 @@ const Info = () => {
             </div>
           )}
         </div> */}
-      </div>
-      <Modal
-        open={false}
-        // onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-      >
-        <Loading />
-      </Modal>
     </>
   );
 };

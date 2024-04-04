@@ -6,24 +6,22 @@ import { publicRoutes } from "./routes";
 
 function App() {
   return (
-    <div className="wrapper">
-      <Routes>
-        {publicRoutes.map((route, index) => {
-          const Page = route.component;
-          return (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Suspense fallback={<Loading />}>
-                  <Page />
-                </Suspense>
-              }
-            ></Route>
-          );
-        })}
-      </Routes>
-    </div>
+    <Routes>
+      {publicRoutes.map((route, index) => {
+        const Page = route.component;
+        return (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <Suspense fallback={<Loading />}>
+                <Page />
+              </Suspense>
+            }
+          ></Route>
+        );
+      })}
+    </Routes>
   );
 }
 
