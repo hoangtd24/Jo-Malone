@@ -81,7 +81,8 @@ const Info = () => {
                   <input
                     {...register("name", {
                       required: true,
-                      //pattern: /^[A-Za-z]+$/i,
+                      pattern:
+                        /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/,
                     })}
                     placeholder="Full name"
                   />
